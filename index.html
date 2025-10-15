@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💎 FREE FIRE GIVEAWAY & REDEEM CODE - Claim Now!</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* 1. Global & Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1f2833 0%, #000000 100%); 
+      color: #fff;
+      text-align: center;
+      padding: 20px 0; 
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    /* 2. Main Container */
+    .container {
+      max-width: 420px;
+      width: 92%; 
+      margin: 0 auto; 
+      background: #283a4f;
+      border-radius: 24px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      padding: 35px 25px;
+      border: 3px solid #ff5722; 
+    }
+
+    .section-header {
+        background-color: #ff5722; 
+        padding: 10px 15px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        font-weight: 700;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+
+    /* 4. Form Elements */
+    input, button {
+      width: 100%; 
+      margin: 10px 0;
+      padding: 16px; 
+      border-radius: 12px; 
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      border: none;
+    }
+
+    input {
+      border: 1px solid #ff5722; 
+      background-color: #1f2833;
+      color: #ffffff;
+      padding-left: 15px;
+    }
+    
+    input:focus {
+      border-color: #ffcc00;
+      box-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+      outline: none;
+    }
+
+    button {
+      background: linear-gradient(90deg, #ff5722 0%, #ff9800 100%);
+      color: #1f2833;
+      font-weight: 800;
+      box-shadow: 0 5px 20px rgba(255, 87, 34, 0.5);
+      text-transform: uppercase;
+    }
+    
+    button:hover, button:active { 
+      background: linear-gradient(90deg, #ff9800 0%, #ff5722 100%);
+      transform: translateY(-2px); 
+    }
+
+    /* 5. Status Messages - IMPORTANT FIX: ENSURING HIDDEN BY DEFAULT */
+    .status-msg {
+        font-size: 1rem;
+        margin-top: 15px;
+        padding: 15px;
+        border-radius: 10px;
+        font-weight: 700;
+        display: none; /* FIX: Ensure all status messages are hidden initially */
+        text-align: center;
+    }
+    
+    #waitMsg, #giveawayWaitMsg {
+        background-color: #333d4a;
+        color: #ffcc00;
+        border: 1px solid #ffcc00;
+    }
+
+    #countdown, #giveawayCountdown {
+        font-size: 1.8rem;
+        font-weight: 800;
+        display: block;
+        margin-top: 5px;
+        color: #4CAF50;
+    }
+
+    /* GIVEAWAY SUCCESS MESSAGE */
+    #giveawaySuccessMsg {
+        background-color: #4CAF50; 
+        color: #1f2833;
+        border: 2px solid #388e3c;
+        font-size: 1.1rem;
+    }
+    
+    /* CODE GENERATOR SUCCESS BOX */
+    #codeBox {
+      color: #fff; 
+      background-color: #ff5722; 
+      border: 2px solid #ffcc00;
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 15px;
+    }
+    
+    #successAlert {
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: #fff;
+        text-shadow: 1px 1px 2px #000;
+        margin-bottom: 10px;
+    }
+    
+    #redeemCode {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: #1f2833; 
+        background-color: #ffffff;
+        padding: 15px 10px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border: 2px dashed #ffcc00;
+        word-break: break-all;
+        display: block;
+    }
+    
+    #copyBtn {
+        background: #1f2833;
+        color: #fff;
+        font-size: 1rem;
+        padding: 12px;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+    /* General Error Message */
+    .error-msg {
+        background-color: #4a3d3d;
+        color: #ff5722;
+        border: 1px solid #ff5722;
+    }
+
+    /* CTA and Leaderboard styles maintained */
+    #extraCtaLink {
+        display: block;
+        text-decoration: none;
+        margin: 35px 0;
+        padding: 20px 15px;
+        border-radius: 15px;
+        background: linear-gradient(45deg, #4CAF50 0%, #8bc34a 100%);
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6);
+        animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+        100% { transform: scale(1); }
+    }
+    .leaderboard-container {
+        margin-top: 40px;
+        background: #1f2833;
+        padding: 20px 15px;
+        border-radius: 15px;
+        border: 1px solid #ffcc00;
+    }
+    .leaderboard-header {
+        color: #ffcc00;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+    .winner-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px dashed #333d4a;
+        font-size: 0.95rem;
+    }
+    .winner-reward {
+        font-weight: 700;
+        color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="redeem-section">
+        <div class="section-header">FREE REDEEM CODE</div>
+
+        <input type="tel" id="ffid_redeem" placeholder="Enter your Free Fire ID (UID)" pattern="[0-9]*" required />
+        <button id="redeemBtn">⚡ CLAIM YOUR CODE</button>
+
+        <div id="redeemErrorMsg" class="status-msg error-msg">
+            ❌ Please enter a **valid** Free Fire ID (Numbers only).
+        </div>
+
+        <div id="waitMsg" class="status-msg">
+            ⏳ Verifying ID and Generating Code...
+            <span id="countdown">10</span>
+        </div>
+
+        <div id="codeBox" class="status-msg"> 
+            <span id="successAlert">🎉 CODE SUCCESSFULLY UNLOCKED!</span>
+            <span id="redeemCode"></span>
+            <button id="copyBtn">📋 COPY CODE</button>
+        </div>
+    </div>
+    
+    <hr style="margin: 30px 0; border-color: #1f2833;">
+
+    <a href="YOUR_MONETAG_DIRECT_LINK_HERE" id="extraCtaLink" target="_blank" rel="noopener noreferrer">
+        🚀 UNLOCK EXCLUSIVE DAILY REWARDS NOW!
+    </a>
+
+    <hr style="margin: 30px 0; border-color: #1f2833;">
+    
+    <div class="giveaway-section">
+        <div class="section-header">DAILY DIAMONDS GIVEAWAY</div>
+
+        <input type="tel" id="ffid_giveaway" placeholder="Enter ID to participate in Giveaway" pattern="[0-9]*" required />
+        <button id="giveawayBtn">⭐ PARTICIPATE NOW</button>
+
+        <div id="giveawayErrorMsg" class="status-msg error-msg">
+            ❌ Please enter a **valid** Free Fire ID (Numbers only).
+        </div>
+
+        <div id="giveawayWaitMsg" class="status-msg">
+            ⌛ Please wait, verifying eligibility...
+            <span id="giveawayCountdown">20</span>
+        </div>
+
+        <div id="giveawaySuccessMsg" class="status-msg">
+            ✅ **CONGRATULATIONS!** You have successfully participated in the daily Diamond Giveaway. Good luck!
+        </div>
+    </div>
+
+    <div class="leaderboard-container">
+        <div class="leaderboard-header">✨ LATEST WINNERS TODAY ✨</div>
+        <div class="winner-item"><span class="winner-name">Raju_Gamer007</span><span class="winner-reward">500 Diamonds</span></div>
+        <div class="winner-item"><span class="winner-name">KillerPro_YT</span><span class="winner-reward">2000 Diamonds</span></div>
+        <div class="winner-item"><span class="winner-name">Pari_Official</span><span class="winner-reward">1000 Diamonds</span></div>
+        <div class="winner-item"><span class="winner-name">Dark_Lord99</span><span class="winner-reward">Elite Pass</span></div>
+        <div class="winner-item"><span class="winner-name">Noob_PlayerX</span><span class="winner-reward">500 Diamonds</span></div>
+        <div class="winner-item"><span class="winner-name">Queen_of_FF</span><span class="winner-reward">1000 Diamonds</span></div>
+        <div class="winner-item"><span class="winner-name">Ajay_Slayer</span><span class="winner-reward">500 Diamonds</span></div>
+        <div class="winner-item"><span class="winner-name">Lucky_Guy45</span><span class="winner-reward">2000 Diamonds</span></div>
+        <div class="winner-item"><span class="winner-name">Ravi_Boss</span><span class="winner-reward">Elite Pass</span></div>
+        <div class="winner-item"><span class="winner-name">Mini_Militia</span><span class="winner-reward">1000 Diamonds</span></div>
+    </div>
+    
+  </div>
+  <div class="footer">Enter your Free Fire ID</div>
+
+  <script>
+    // --- REDEEM SECTION ELEMENTS ---
+    const redeemBtn = document.getElementById('redeemBtn');
+    const ffidRedeemInput = document.getElementById('ffid_redeem');
+    const redeemErrorMsg = document.getElementById('redeemErrorMsg');
+    const waitMsg = document.getElementById('waitMsg');
+    const countdownSpan = document.getElementById('countdown');
+    const codeBox = document.getElementById('codeBox');
+    const codeText = document.getElementById('redeemCode');
+    const copyBtn = document.getElementById('copyBtn');
+
+    // --- GIVEAWAY SECTION ELEMENTS ---
+    const giveawayBtn = document.getElementById('giveawayBtn');
+    const ffidGiveawayInput = document.getElementById('ffid_giveaway');
+    const giveawayErrorMsg = document.getElementById('giveawayErrorMsg');
+    const giveawayWaitMsg = document.getElementById('giveawayWaitMsg');
+    const giveawayCountdownSpan = document.getElementById('giveawayCountdown');
+    const giveawaySuccessMsg = document.getElementById('giveawaySuccessMsg');
+
+    let countdownInterval;
+
+    function hideAllMessages(section) {
+        clearInterval(countdownInterval);
+        
+        if (section === 'redeem') {
+            waitMsg.style.display = 'none';
+            codeBox.style.display = 'none';
+            redeemErrorMsg.style.display = 'none';
+            redeemBtn.style.display = 'block';
+            copyBtn.textContent = '📋 COPY CODE';
+        } else if (section === 'giveaway') {
+            giveawayWaitMsg.style.display = 'none';
+            giveawaySuccessMsg.style.display = 'none';
+            giveawayErrorMsg.style.display = 'none';
+            giveawayBtn.style.display = 'block';
+        }
+    }
+
+    function startCountdown(duration, elementId, onFinish) {
+        let timer = duration;
+        const countdownElement = document.getElementById(elementId);
+        countdownElement.textContent = timer;
+        
+        countdownInterval = setInterval(() => {
+            timer--;
+            countdownElement.textContent = timer;
+
+            if (timer <= 0) {
+                clearInterval(countdownInterval);
+                onFinish();
+            }
+        }, 1000);
+    }
+    
+    function generateFakePlayStoreCode() {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      let code = '';
+      for (let i = 0; i < 16; i++) {
+        code += chars.charAt(Math.floor(Math.random() * chars.length));
+        if (i === 3 || i === 7 || i === 11) code += '-';
+      }
+      return code;
+    }
+
+    // --- REDEEM SECTION LOGIC ---
+    redeemBtn.addEventListener('click', () => {
+        hideAllMessages('redeem'); 
+        
+        const id = ffidRedeemInput.value.trim();
+        
+        if (id === '' || !/^\d+$/.test(id) || id.length < 5) {
+            redeemBtn.style.display = 'none';
+            redeemErrorMsg.style.display = 'block';
+            setTimeout(() => { hideAllMessages('redeem'); }, 3000); 
+            ffidRedeemInput.focus();
+            return;
+        }
+        
+        redeemBtn.style.display = 'none';
+        waitMsg.style.display = 'block';
+        
+        const onFinish = () => {
+            waitMsg.style.display = 'none';
+            codeText.textContent = generateFakePlayStoreCode(); 
+            codeBox.style.display = 'block';
+        };
+        
+        startCountdown(10, 'countdown', onFinish);
+    });
+
+    copyBtn.addEventListener('click', () => {
+        const code = codeText.textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            copyBtn.textContent = '✅ CODE COPIED!';
+            setTimeout(() => { copyBtn.textContent = '📋 COPY CODE'; }, 2000);
+        }).catch(err => {
+            alert('Copy failed. Please copy the code manually.');
+        });
+    });
+
+    // --- GIVEAWAY SECTION LOGIC ---
+    giveawayBtn.addEventListener('click', () => {
+        hideAllMessages('giveaway'); 
+        
+        const id = ffidGiveawayInput.value.trim();
+        
+        if (id === '' || !/^\d+$/.test(id) || id.length < 5) {
+            giveawayBtn.style.display = 'none';
+            giveawayErrorMsg.style.display = 'block';
+            setTimeout(() => { hideAllMessages('giveaway'); }, 3000); 
+            ffidGiveawayInput.focus();
+            return;
+        }
+        
+        giveawayBtn.style.display = 'none';
+        giveawayWaitMsg.style.display = 'block';
+
+        const onFinish = () => {
+            giveawayWaitMsg.style.display = 'none';
+            giveawaySuccessMsg.style.display = 'block';
+            setTimeout(() => { giveawayBtn.style.display = 'block'; }, 5000); 
+        };
+        
+        startCountdown(20, 'giveawayCountdown', onFinish);
+    });
+
+  </script>
+</body>
+</html>
